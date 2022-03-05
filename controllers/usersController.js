@@ -126,13 +126,6 @@ exports.login = async (req, res) => {
 			})
 		}
 
-        req.session.currentUser = {
-            _id : foundUser._id,
-            name: foundUser.name,
-            email: foundUser.email,
-            msg: "Este es su ticket"
-        }
-
 		// GESTIÓN DE JSONWEBTOKEN
 
 		// A. PAYLOAD

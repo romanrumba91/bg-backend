@@ -17,6 +17,7 @@ app.use(express.json({extended: true}))
 
 // 3. RUTEO
 app.use("/", require("./routes/index"))
+app.use("/api/users", require("./routes/users"))
 
 
 // 4. SERVIDOR
