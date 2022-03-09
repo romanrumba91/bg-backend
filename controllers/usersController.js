@@ -193,3 +193,13 @@ exports.verifyToken = async (req, res) => {
 
  
 }
+
+exports.getProfile = async (req, res) => {
+	try {
+	  res.json({});
+  
+	  const user = await User.find();
+	} catch (error) {
+	  console.log(error);
+	}
+  };

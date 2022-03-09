@@ -10,7 +10,10 @@ router.post("/create", userController.create)
 
 router.post("/login", userController.login)
 
+router.get("/:id", authorization, userController.verifyToken)
+
 router.get("/verifytoken", authorization, userController.verifyToken)
+
 
 
 module.exports = router
