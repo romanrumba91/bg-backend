@@ -30,3 +30,34 @@ exports.createBagPack = async (req, res) => {
 	
 
 }
+
+exports.getBag = async (req, res) => {
+
+    const {id}=req.params
+    const foundEdit = await BagPack.findById(id)
+
+    res.json({
+		msg: "Se ha editado una mascota correctamente",
+		data: foundEdit
+	})
+
+}
+
+exports.getEditBagForm = async (req, res) => {
+
+    //NECESITO EL ID DEL LIBRO PARA EDITAR
+    const {id}=req.params
+    //DATOS DEL FORMULARIO NUEVOS CON LOS CUALES VOY A ACTUALIZAR
+    const { nameBagPack, imageBagPack, descriptionBagPack, priceBagPack, color }  = req.body
+    //actualizar base de datos
+    const updateOrders = await BagPack.findByIdAndUpdate(
+        id,{ nameBagPack, imageBagPack, descriptionBagPack, priceBagPack, color } ,
+        {new:true}
+    )
+
+    // REDIRECCIONAR A LA PAGINA INDIVIDUAL DEL LIBRO
+    res.json({
+        msg: "Se ha editado una mascota correctamente",
+        data: updateOrders,
+      });
+}

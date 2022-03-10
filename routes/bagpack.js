@@ -8,6 +8,8 @@ const bagpackController 	= require("./../controllers/bagpackController")
 router.get("/", bagpackController.getBagpacks)
 
 router.post("/create", bagpackController.createBagPack)
+router.get("/:id", bagpackController.getBag)
+router.post("/:id/edit", bagpackController.getEditBagForm);
 
 
 
