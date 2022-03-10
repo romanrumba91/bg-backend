@@ -16,18 +16,17 @@ exports.getBagpacks = async (req, res) => {
 
 }
 
-exports.selectedBagPack= async (req, res) => {
+exports.createBagPack = async (req, res) => {
+	
+	// FORMULARIO
+	const { nameBagPack, imageBagPack, descriptionBagPack, priceBagPack, color } = req.body
 
-    const {id} = req.params
-    
-      try {
-        const selectedBagPack = await BagPack.findById(id);
-    
-        res.json({
-          msg: "Selected successfully",
-          data: selectedBagPack,
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    };
+	const newBagPack	= await BagPack.create({ nameBagPack, imageBagPack, descriptionBagPack, priceBagPack, color })
+
+	res.json({
+		msg: "Se ha creado una mascota correctamente",
+		data: newBagPack
+	})
+	
+
+}

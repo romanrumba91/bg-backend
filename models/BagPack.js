@@ -29,6 +29,8 @@ const bagPackSchema = mongoose.Schema({
     timestamp: true
 }
 
+
+
 )
 
 //MODELO

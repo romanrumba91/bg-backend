@@ -5,9 +5,9 @@ const bagpackController 	= require("./../controllers/bagpackController")
 
 // 2. ROUTER
 // A. HOME
-router.post("/all", bagpackController.getBagpacks)
+router.get("/", bagpackController.getBagpacks)
 
-router.post("/:id", bagpackController.selectedBagPack)
+router.post("/create", bagpackController.createBagPack)
 
 
 
