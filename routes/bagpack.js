@@ -10,7 +10,7 @@ router.get("/", bagpackController.getBagpacks)
 router.post("/create", bagpackController.createBagPack)
 router.get("/:id", bagpackController.getBag)
 router.post("/:id/edit", bagpackController.getEditBagForm);
-
+router.post("/:id/delete", bagpackController.deleteBag)
 
 
 

@@ -61,3 +61,25 @@ exports.getEditBagForm = async (req, res) => {
         data: updateOrders,
       });
 }
+
+exports.deleteBag = async (req,res) => {
+
+    const { id } = req.params
+
+    try{
+
+        const deletedBag = await BagPack.findByIdAndRemove(id)
+
+        res.json({
+            msg:"Se ha eliminado esta mochila",
+            data: deletedBag
+        })
+
+    } catch (error) {
+
+        console.log(error)
+
+        
+    }
+}
+
